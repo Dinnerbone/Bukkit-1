@@ -63,7 +63,9 @@ public abstract class Event implements Serializable {
     public final String getEventName() {
         return name;
     }
-
+    
+    public abstract HandlerList getHandlers();
+    
     /**
      * Represents an events priority in execution
      */
@@ -863,7 +865,7 @@ public abstract class Event implements Serializable {
         /**
          * Represents a custom event, isn't actually used
          */
-        CUSTOM_EVENT (Category.MISCELLANEOUS, Event.class),
+        CUSTOM_EVENT (Category.MISCELLANEOUS, TransitionalCustomEvent.class),
         /**
          * Represents an event using the new, Event.Type-less event system to avoid NPE-ing
          */
