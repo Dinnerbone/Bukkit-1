@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
     private int level;
 
@@ -47,8 +48,6 @@ public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

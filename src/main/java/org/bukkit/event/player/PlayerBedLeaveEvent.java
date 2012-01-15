@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerBedLeaveEvent extends PlayerEvent {
+    private static final HandlerList handlers = new HandlerList();
 
     private Block bed;
 
@@ -25,8 +26,6 @@ public class PlayerBedLeaveEvent extends PlayerEvent {
     public Block getBed() {
         return bed;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

@@ -12,6 +12,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class BlockFromToEvent extends BlockEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     protected Block to;
     protected BlockFace face;
     protected boolean cancel;
@@ -50,8 +51,6 @@ public class BlockFromToEvent extends BlockEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

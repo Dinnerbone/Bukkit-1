@@ -7,6 +7,7 @@ import org.bukkit.event.HandlerList;
 
 @SuppressWarnings("serial")
 public class EndermanPickupEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean cancel;
     private Block block;
@@ -33,8 +34,6 @@ public class EndermanPickupEvent extends EntityEvent implements Cancellable {
     public Block getBlock() {
         return block;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

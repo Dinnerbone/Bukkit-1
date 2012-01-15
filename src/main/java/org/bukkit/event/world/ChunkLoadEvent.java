@@ -8,6 +8,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class ChunkLoadEvent extends ChunkEvent {
+    private static final HandlerList handlers = new HandlerList();
     private final boolean newChunk;
 
     public ChunkLoadEvent(final Chunk chunk, final boolean newChunk) {
@@ -24,8 +25,6 @@ public class ChunkLoadEvent extends ChunkEvent {
     public boolean isNewChunk() {
         return newChunk;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

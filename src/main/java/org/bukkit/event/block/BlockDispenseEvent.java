@@ -13,6 +13,7 @@ import org.bukkit.util.Vector;
  */
 @SuppressWarnings("serial")
 public class BlockDispenseEvent extends BlockEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean cancelled = false;
     private ItemStack item;
@@ -70,8 +71,6 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

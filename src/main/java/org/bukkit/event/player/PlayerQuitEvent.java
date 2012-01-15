@@ -8,6 +8,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerQuitEvent extends PlayerEvent {
+    private static final HandlerList handlers = new HandlerList();
 
     private String quitMessage;
 
@@ -33,8 +34,6 @@ public class PlayerQuitEvent extends PlayerEvent {
     public void setQuitMessage(String quitMessage) {
         this.quitMessage = quitMessage;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

@@ -11,6 +11,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class LeavesDecayEvent extends BlockEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
 
     public LeavesDecayEvent(final Block block) {
@@ -24,8 +25,6 @@ public class LeavesDecayEvent extends BlockEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

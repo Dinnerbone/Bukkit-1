@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerTeleportEvent extends PlayerMoveEvent {
+    private static final HandlerList handlers = new HandlerList();
     private TeleportCause cause = TeleportCause.UNKNOWN;
 
     public PlayerTeleportEvent(Player player, Location from, Location to) {
@@ -59,8 +60,6 @@ public class PlayerTeleportEvent extends PlayerMoveEvent {
          */
         UNKNOWN;
     }
-
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

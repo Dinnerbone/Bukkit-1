@@ -5,11 +5,10 @@ import org.bukkit.event.HandlerList;
 
 @SuppressWarnings("serial")
 public class VehicleUpdateEvent extends VehicleEvent {
+    private static final HandlerList handlers = new HandlerList();
     public VehicleUpdateEvent(Vehicle vehicle) {
         super(Type.VEHICLE_UPDATE, vehicle);
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

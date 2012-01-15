@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerKickEvent extends PlayerEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private String leaveMessage;
     private String kickReason;
     private Boolean cancel;
@@ -63,8 +64,6 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
     public void setLeaveMessage(String leaveMessage) {
         this.leaveMessage = leaveMessage;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

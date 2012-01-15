@@ -15,6 +15,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class BlockCanBuildEvent extends BlockEvent {
+    private static final HandlerList handlers = new HandlerList();
     protected boolean buildable;
     protected int material;
 
@@ -60,8 +61,6 @@ public class BlockCanBuildEvent extends BlockEvent {
     public int getMaterialId() {
         return material;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

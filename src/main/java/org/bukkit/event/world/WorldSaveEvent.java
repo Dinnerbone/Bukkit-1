@@ -5,11 +5,10 @@ import org.bukkit.event.HandlerList;
 
 @SuppressWarnings("serial")
 public class WorldSaveEvent extends WorldEvent {
+    private static final HandlerList handlers = new HandlerList();
     public WorldSaveEvent(World world) {
         super(Type.WORLD_SAVE, world);
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

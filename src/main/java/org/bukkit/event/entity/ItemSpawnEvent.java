@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class ItemSpawnEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private Location location;
     private boolean canceled;
@@ -35,8 +36,6 @@ public class ItemSpawnEvent extends EntityEvent implements Cancellable {
     public Location getLocation() {
         return location;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

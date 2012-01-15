@@ -8,6 +8,7 @@ import org.bukkit.util.Vector;
 
 @SuppressWarnings("serial")
 public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     /**
      * Holds information for player velocity events
@@ -62,8 +63,6 @@ public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
     public void setVelocity(Vector velocity) {
         this.velocity = velocity;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

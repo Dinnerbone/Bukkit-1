@@ -8,6 +8,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerLoginEvent extends PlayerEvent {
+    private static final HandlerList handlers = new HandlerList();
     private Result result;
     private String message;
 
@@ -77,8 +78,6 @@ public class PlayerLoginEvent extends PlayerEvent {
         this.result = result;
         this.message = message;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

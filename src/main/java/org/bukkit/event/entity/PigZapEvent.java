@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PigZapEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean canceled;
     private Entity pigzombie;
@@ -46,8 +47,6 @@ public class PigZapEvent extends EntityEvent implements Cancellable {
     public Entity getPigZombie() {
         return pigzombie;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

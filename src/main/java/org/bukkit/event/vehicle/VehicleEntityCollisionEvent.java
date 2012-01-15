@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class VehicleEntityCollisionEvent extends VehicleCollisionEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private Entity entity;
     private boolean cancelled = false;
     private boolean cancelledPickup = false;
@@ -47,8 +48,6 @@ public class VehicleEntityCollisionEvent extends VehicleCollisionEvent implement
     public void setCollisionCancelled(boolean cancel) {
         cancelledCollision = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

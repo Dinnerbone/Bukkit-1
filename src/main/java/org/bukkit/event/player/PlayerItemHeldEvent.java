@@ -8,6 +8,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerItemHeldEvent extends PlayerEvent {
+    private static final HandlerList handlers = new HandlerList();
     private int previous;
     private int current;
 
@@ -34,8 +35,6 @@ public class PlayerItemHeldEvent extends PlayerEvent {
     public int getNewSlot() {
         return current;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

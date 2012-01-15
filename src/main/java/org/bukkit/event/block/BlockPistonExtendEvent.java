@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
 
 @SuppressWarnings("serial")
 public class BlockPistonExtendEvent extends BlockPistonEvent {
+    private static final HandlerList handlers = new HandlerList();
     private int length;
     private List<Block> blocks;
 
@@ -43,8 +44,6 @@ public class BlockPistonExtendEvent extends BlockPistonEvent {
         }
         return blocks;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

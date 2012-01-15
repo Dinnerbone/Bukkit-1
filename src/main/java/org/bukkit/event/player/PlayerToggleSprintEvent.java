@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerToggleSprintEvent extends PlayerEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean isSprinting;
     private boolean cancel = false;
 
@@ -33,8 +34,6 @@ public class PlayerToggleSprintEvent extends PlayerEvent implements Cancellable 
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

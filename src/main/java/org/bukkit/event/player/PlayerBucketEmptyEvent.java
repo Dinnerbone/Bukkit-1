@@ -12,12 +12,11 @@ import org.bukkit.inventory.ItemStack;
  */
 @SuppressWarnings("serial")
 public class PlayerBucketEmptyEvent extends PlayerBucketEvent {
+    private static final HandlerList handlers = new HandlerList();
     public PlayerBucketEmptyEvent(Player who, Block blockClicked, BlockFace blockFace, Material bucket, ItemStack itemInHand) {
         super(Type.PLAYER_BUCKET_EMPTY, who, blockClicked, blockFace, bucket, itemInHand);
 
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

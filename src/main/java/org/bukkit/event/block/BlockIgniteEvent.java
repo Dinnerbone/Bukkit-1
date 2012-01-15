@@ -13,6 +13,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class BlockIgniteEvent extends BlockEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private IgniteCause cause;
     private boolean cancel;
     private Player thePlayer;
@@ -72,9 +73,7 @@ public class BlockIgniteEvent extends BlockEvent implements Cancellable {
          */
         LIGHTNING,
     }
-    
-    private static final HandlerList handlers = new HandlerList();
-    
+
     @Override
     public HandlerList getHandlers() {
         return handlers;

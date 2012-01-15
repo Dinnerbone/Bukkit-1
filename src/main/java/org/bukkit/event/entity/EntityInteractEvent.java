@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class EntityInteractEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     protected Block block;
 
     private boolean cancelled;
@@ -35,8 +36,6 @@ public class EntityInteractEvent extends EntityEvent implements Cancellable {
     public Block getBlock() {
         return block;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

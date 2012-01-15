@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class WorldUnloadEvent extends WorldEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean isCancelled;
 
     public WorldUnloadEvent(World world) {
@@ -22,8 +23,6 @@ public class WorldUnloadEvent extends WorldEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         this.isCancelled = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

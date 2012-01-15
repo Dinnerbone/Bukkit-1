@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerEggThrowEvent extends PlayerEvent {
+    private static final HandlerList handlers = new HandlerList();
     private Egg egg;
     private boolean hatching;
     private CreatureType hatchType;
@@ -95,8 +96,6 @@ public class PlayerEggThrowEvent extends PlayerEvent {
     public void setNumHatches(byte numHatches) {
         this.numHatches = numHatches;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

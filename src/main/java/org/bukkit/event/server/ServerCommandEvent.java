@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class ServerCommandEvent extends ServerEvent {
+    private static final HandlerList handlers = new HandlerList();
     private String command;
     private CommandSender sender;
 
@@ -49,8 +50,6 @@ public class ServerCommandEvent extends ServerEvent {
     public CommandSender getSender() {
         return sender;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

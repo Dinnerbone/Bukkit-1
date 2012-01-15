@@ -7,6 +7,7 @@ import org.bukkit.event.HandlerList;
 
 @SuppressWarnings("serial")
 public class EndermanPlaceEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean cancel;
     private Location location;
@@ -33,8 +34,6 @@ public class EndermanPlaceEvent extends EntityEvent implements Cancellable {
     public Location getLocation() {
         return location;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

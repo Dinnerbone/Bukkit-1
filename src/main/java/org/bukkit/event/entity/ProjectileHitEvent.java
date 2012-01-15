@@ -8,12 +8,11 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class ProjectileHitEvent extends EntityEvent {
+    private static final HandlerList handlers = new HandlerList();
 
     public ProjectileHitEvent(Projectile projectile) {
         super(Type.PROJECTILE_HIT, projectile);
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

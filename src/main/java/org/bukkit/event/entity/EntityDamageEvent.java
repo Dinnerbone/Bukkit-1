@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class EntityDamageEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private int damage;
     private boolean cancelled;
@@ -61,8 +62,6 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
     public DamageCause getCause() {
         return cause;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

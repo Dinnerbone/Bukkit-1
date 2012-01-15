@@ -7,6 +7,7 @@ import org.bukkit.event.HandlerList;
 
 @SuppressWarnings("serial")
 public class BlockPistonRetractEvent extends BlockPistonEvent {
+    private static final HandlerList handlers = new HandlerList();
     public BlockPistonRetractEvent(Block block, BlockFace direction) {
         super(Type.BLOCK_PISTON_RETRACT, block, direction);
     }
@@ -20,8 +21,6 @@ public class BlockPistonRetractEvent extends BlockPistonEvent {
     public Location getRetractLocation() {
         return getBlock().getRelative(getDirection(), 2).getLocation();
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

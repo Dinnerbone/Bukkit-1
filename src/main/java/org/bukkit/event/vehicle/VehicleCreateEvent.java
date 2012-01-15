@@ -8,11 +8,10 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class VehicleCreateEvent extends VehicleEvent {
+    private static final HandlerList handlers = new HandlerList();
     public VehicleCreateEvent(Vehicle vehicle) {
         super(Type.VEHICLE_CREATE, vehicle);
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

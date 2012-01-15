@@ -8,6 +8,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerJoinEvent extends PlayerEvent {
+    private static final HandlerList handlers = new HandlerList();
     private String joinMessage;
 
     public PlayerJoinEvent(Player playerJoined, String joinMessage) {
@@ -32,8 +33,6 @@ public class PlayerJoinEvent extends PlayerEvent {
     public void setJoinMessage(String joinMessage) {
         this.joinMessage = joinMessage;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

@@ -11,6 +11,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class EntityCombustEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private int duration;
     private boolean cancel;
 
@@ -45,8 +46,6 @@ public class EntityCombustEvent extends EntityEvent implements Cancellable {
     public void setDuration(int duration) {
         this.duration = duration;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

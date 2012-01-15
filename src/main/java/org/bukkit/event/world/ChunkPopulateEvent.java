@@ -11,11 +11,10 @@ import org.bukkit.generator.BlockPopulator;
  */
 @SuppressWarnings("serial")
 public class ChunkPopulateEvent extends ChunkEvent {
+    private static final HandlerList handlers = new HandlerList();
     public ChunkPopulateEvent(final Chunk chunk) {
         super(Type.CHUNK_POPULATED, chunk);
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

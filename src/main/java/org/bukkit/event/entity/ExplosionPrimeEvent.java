@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancel;
     private float radius;
     private boolean fire;
@@ -68,8 +69,6 @@ public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
     public void setFire(boolean fire) {
         this.fire = fire;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

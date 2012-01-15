@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class ServerListPingEvent extends ServerEvent {
+    private static final HandlerList handlers = new HandlerList();
 
     private InetAddress address;
     private String motd;
@@ -77,8 +78,6 @@ public class ServerListPingEvent extends ServerEvent {
     public void setMaxPlayers(int maxPlayers) {
         this.maxPlayers = maxPlayers;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

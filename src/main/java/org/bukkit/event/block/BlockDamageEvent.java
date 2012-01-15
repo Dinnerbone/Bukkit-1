@@ -13,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
  */
 @SuppressWarnings("serial")
 public class BlockDamageEvent extends BlockEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private Player player;
     private boolean instaBreak;
     private boolean cancel;
@@ -69,8 +70,6 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

@@ -6,6 +6,7 @@ import org.bukkit.event.HandlerList;
 
 @SuppressWarnings("serial")
 public class PlayerChangedWorldEvent extends PlayerEvent {
+    private static final HandlerList handlers = new HandlerList();
 
     private final World from;
 
@@ -17,8 +18,6 @@ public class PlayerChangedWorldEvent extends PlayerEvent {
     public World getFrom() {
         return from;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

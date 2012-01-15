@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerPreLoginEvent extends Event {
+    private static final HandlerList handlers = new HandlerList();
     private Result result;
     private String message;
     private String name;
@@ -94,8 +95,6 @@ public class PlayerPreLoginEvent extends Event {
     public InetAddress getAddress() {
         return ipAddress;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

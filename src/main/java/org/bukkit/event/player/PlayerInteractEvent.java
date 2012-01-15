@@ -14,6 +14,7 @@ import org.bukkit.event.block.Action;
  */
 @SuppressWarnings("serial")
 public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     protected ItemStack item;
     protected Action action;
     protected Block blockClicked;
@@ -174,8 +175,6 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
     public void setUseItemInHand(Result useItemInHand) {
         this.useItemInHand = useItemInHand;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

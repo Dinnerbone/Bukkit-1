@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class ThunderChangeEvent extends WeatherEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean canceled;
     private boolean to;
@@ -34,8 +35,6 @@ public class ThunderChangeEvent extends WeatherEvent implements Cancellable {
     public boolean toThunderState() {
         return to;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

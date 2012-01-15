@@ -13,6 +13,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class CreatureSpawnEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private Location location;
     private boolean canceled;
@@ -60,8 +61,6 @@ public class CreatureSpawnEvent extends EntityEvent implements Cancellable {
     public SpawnReason getSpawnReason() {
         return spawnReason;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

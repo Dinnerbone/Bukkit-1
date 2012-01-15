@@ -13,6 +13,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerChatEvent extends PlayerEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
     private String message;
     private String format = "<%1$s> %2$s";
@@ -98,8 +99,6 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
     public Set<Player> getRecipients() {
         return recipients;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

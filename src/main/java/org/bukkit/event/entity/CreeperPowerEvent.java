@@ -11,6 +11,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class CreeperPowerEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean canceled;
     private PowerCause cause;
@@ -53,8 +54,6 @@ public class CreeperPowerEvent extends EntityEvent implements Cancellable {
     public PowerCause getCause() {
         return cause;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

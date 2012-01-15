@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerFishEvent extends PlayerEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private final Entity entity;
     private boolean cancel = false;
     private State state;
@@ -45,8 +46,6 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
     public State getState() {
         return state;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

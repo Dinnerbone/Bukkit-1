@@ -20,6 +20,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class BlockSpreadEvent extends BlockFormEvent {
+    private static final HandlerList handlers = new HandlerList();
     private Block source;
 
     public BlockSpreadEvent(Block block, Block source, BlockState newState) {
@@ -35,8 +36,6 @@ public class BlockSpreadEvent extends BlockFormEvent {
     public Block getSource() {
         return source;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

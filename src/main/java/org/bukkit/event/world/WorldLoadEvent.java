@@ -8,11 +8,10 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class WorldLoadEvent extends WorldEvent {
+    private static final HandlerList handlers = new HandlerList();
     public WorldLoadEvent(World world) {
         super(Type.WORLD_LOAD, world);
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

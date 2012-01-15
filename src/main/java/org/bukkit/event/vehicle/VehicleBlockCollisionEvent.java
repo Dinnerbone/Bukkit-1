@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class VehicleBlockCollisionEvent extends VehicleCollisionEvent {
+    private static final HandlerList handlers = new HandlerList();
     private Block block;
 
     public VehicleBlockCollisionEvent(Vehicle vehicle, Block block) {
@@ -24,8 +25,6 @@ public class VehicleBlockCollisionEvent extends VehicleCollisionEvent {
     public Block getBlock() {
         return block;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

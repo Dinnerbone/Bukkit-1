@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     protected Entity clickedEntity;
     boolean cancelled = false;
 
@@ -34,8 +35,6 @@ public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellabl
     public Entity getRightClicked() {
         return this.clickedEntity;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

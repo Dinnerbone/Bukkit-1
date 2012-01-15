@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class LightningStrikeEvent extends WeatherEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean canceled;
     private LightningStrike bolt;
@@ -35,8 +36,6 @@ public class LightningStrikeEvent extends WeatherEvent implements Cancellable {
     public LightningStrike getLightning() {
         return bolt;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

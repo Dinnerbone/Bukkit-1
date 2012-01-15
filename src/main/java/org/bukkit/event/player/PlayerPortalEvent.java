@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PlayerPortalEvent extends PlayerTeleportEvent {
+    private static final HandlerList handlers = new HandlerList();
 
     protected boolean useTravelAgent = true;
 
@@ -36,8 +37,6 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
     public void setPortalTravelAgent(TravelAgent travelAgent) {
         this.travelAgent = travelAgent;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

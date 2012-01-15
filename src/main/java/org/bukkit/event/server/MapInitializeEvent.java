@@ -9,6 +9,7 @@ import org.bukkit.map.MapView;
  */
 @SuppressWarnings("serial")
 public class MapInitializeEvent extends ServerEvent {
+    private static final HandlerList handlers = new HandlerList();
     private final MapView mapView;
 
     public MapInitializeEvent(MapView mapView) {
@@ -24,8 +25,6 @@ public class MapInitializeEvent extends ServerEvent {
     public MapView getMap() {
         return mapView;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

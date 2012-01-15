@@ -9,6 +9,7 @@ import org.bukkit.inventory.Inventory;
  */
 @SuppressWarnings("serial")
 public class PlayerInventoryEvent extends PlayerEvent {
+    private static final HandlerList handlers = new HandlerList();
     protected Inventory inventory;
 
     public PlayerInventoryEvent(final Player player, final Inventory inventory) {
@@ -24,8 +25,6 @@ public class PlayerInventoryEvent extends PlayerEvent {
     public Inventory getInventory() {
         return inventory;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

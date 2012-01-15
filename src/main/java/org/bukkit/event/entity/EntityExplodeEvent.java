@@ -13,6 +13,7 @@ import java.util.List;
  */
 @SuppressWarnings("serial")
 public class EntityExplodeEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancel;
     private Location location;
     private List<Block> blocks;
@@ -77,8 +78,6 @@ public class EntityExplodeEvent extends EntityEvent implements Cancellable {
     public void setYield(float yield) {
         this.yield = yield;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

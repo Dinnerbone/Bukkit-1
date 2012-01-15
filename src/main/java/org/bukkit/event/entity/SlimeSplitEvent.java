@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class SlimeSplitEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancel;
     private int count;
 
@@ -43,8 +44,6 @@ public class SlimeSplitEvent extends EntityEvent implements Cancellable {
     public void setCount(int count) {
         this.count = count;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

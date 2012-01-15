@@ -8,6 +8,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class BlockRedstoneEvent extends BlockEvent {
+    private static final HandlerList handlers = new HandlerList();
     private int oldCurrent;
     private int newCurrent;
 
@@ -43,8 +44,6 @@ public class BlockRedstoneEvent extends BlockEvent {
     public void setNewCurrent(int newCurrent) {
         this.newCurrent = newCurrent;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class PaintingBreakEvent extends PaintingEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean cancelled;
     private RemoveCause cause;
@@ -60,8 +61,6 @@ public class PaintingBreakEvent extends PaintingEvent implements Cancellable {
          */
         PHYSICS,
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

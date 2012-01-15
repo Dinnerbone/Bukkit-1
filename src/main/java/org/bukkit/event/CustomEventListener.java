@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
  */
 @Deprecated
 public class CustomEventListener implements Listener {
+    private static final HandlerList handlers = new HandlerList();
     public CustomEventListener() {}
 
     /**

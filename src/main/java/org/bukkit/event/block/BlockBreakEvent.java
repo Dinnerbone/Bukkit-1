@@ -16,6 +16,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class BlockBreakEvent extends BlockEvent implements Cancellable {
+
     private static final HandlerList handlers = new HandlerList();
     private Player player;
     private boolean cancel;

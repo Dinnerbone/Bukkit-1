@@ -13,6 +13,7 @@ import java.util.Collection;
  */
 @SuppressWarnings("serial")
 public class PortalCreateEvent extends WorldEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
     private ArrayList<Block> blocks = new ArrayList<Block>();
 
@@ -37,8 +38,6 @@ public class PortalCreateEvent extends WorldEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

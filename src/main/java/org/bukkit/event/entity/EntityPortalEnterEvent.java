@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class EntityPortalEnterEvent extends EntityEvent {
+    private static final HandlerList handlers = new HandlerList();
 
     private Location location;
 
@@ -25,8 +26,6 @@ public class EntityPortalEnterEvent extends EntityEvent {
     public Location getLocation() {
         return location;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

@@ -10,6 +10,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class EntityRegainHealthEvent extends EntityEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
 
     private boolean cancelled;
     private int amount;
@@ -55,8 +56,6 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
     public RegainReason getRegainReason() {
         return regainReason;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {

@@ -12,6 +12,7 @@ import org.bukkit.event.HandlerList;
  * Event that is called when an organic structure attempts to grow (Sapling -> Tree), (Mushroom -> Huge Mushroom), naturally or using bonemeal.
  */
 public class StructureGrowEvent extends WorldEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private static final long serialVersionUID = 1L;
     private boolean cancelled = false;
     private Location location;
@@ -81,8 +82,6 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
-
-    private static final HandlerList handlers = new HandlerList();
 
     public HandlerList getHandlers() {
         return handlers;

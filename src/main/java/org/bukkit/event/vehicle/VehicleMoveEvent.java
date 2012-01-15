@@ -9,6 +9,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class VehicleMoveEvent extends VehicleEvent {
+    private static final HandlerList handlers = new HandlerList();
     private Location from;
     private Location to;
 
@@ -37,8 +38,6 @@ public class VehicleMoveEvent extends VehicleEvent {
         return to;
     }
     
-    
-    private static final HandlerList handlers = new HandlerList();
     
     @Override
     public HandlerList getHandlers() {
