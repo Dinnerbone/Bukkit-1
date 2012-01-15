@@ -5,6 +5,7 @@ import org.bukkit.PortalType;
 import org.bukkit.block.BlockState;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.Cancellable;
+import org.bukkit.event.HandlerList;
 
 /**
  * Thrown when a Living Entity creates a portal in a world.
@@ -45,5 +46,16 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
      */
     public PortalType getPortalType() {
         return type;
+    }
+
+    private static final HandlerList handlers = new HandlerList();
+
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
+
+    public static HandlerList getHandlerList() {
+        return handlers;
     }
 }

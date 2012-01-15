@@ -1,8 +1,9 @@
 package org.bukkit.event;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.bukkit.entity.Projectile;
 import org.bukkit.event.block.*;
 import org.bukkit.event.entity.*;
 import org.bukkit.event.inventory.*;
@@ -18,7 +19,10 @@ import org.bukkit.event.world.*;
  */
 @SuppressWarnings("serial")
 public abstract class Event implements Serializable {
-    @Deprecated private final Type type;
+    @Deprecated
+    private final static Map<String, HandlerList> customHandlers = new HashMap<String, HandlerList>();
+    @Deprecated
+    private final Type type;
     private final String name;
 
     protected Event(final Type type) {
@@ -64,7 +68,20 @@ public abstract class Event implements Serializable {
         return name;
     }
     
-    public abstract HandlerList getHandlers();
+    public HandlerList getHandlers() {
+        if (type == Type.CUSTOM_EVENT) {
+            HandlerList result = customHandlers.get(getEventName());
+
+            if (result == null) {
+                result = new HandlerList();
+                customHandlers.put(getEventName(), result);
+            }
+
+            return result;
+        } else {
+            throw new IllegalStateException("Event must implement getHandlers()");
+        }
+    }
     
     /**
      * Represents an events priority in execution

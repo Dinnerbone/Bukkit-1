@@ -7,19 +7,16 @@ import java.lang.reflect.Method;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.regex.Matcher;
-
-import org.bukkit.Server;
 import java.util.regex.Pattern;
+import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.PluginCommandYamlParser;
 import org.bukkit.command.SimpleCommandMap;
-
-import org.bukkit.event.*;
 import org.bukkit.event.Event.Priority;
+import org.bukkit.event.*;
 import org.bukkit.permissions.Permissible;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
-
 import org.bukkit.util.FileUtil;
 
 /**
@@ -313,7 +310,7 @@ public final class SimplePluginManager implements PluginManager {
      *
      * @param event Event details
      */
-    public synchronized <T extends Event> T callEvent(T event) {
+    public synchronized void callEvent(Event event) {
         HandlerList handlers = event.getHandlers();
         handlers.bake();
         RegisteredListener[][] listeners = handlers.getRegisteredListeners();
@@ -349,8 +346,6 @@ public final class SimplePluginManager implements PluginManager {
                         server.getLogger().log(Level.SEVERE, "Could not pass event " + event.getEventName() + " to " + registration.getPlugin().getDescription().getName(), ex);
                     }
                 }
-            } catch (Throwable ex) {
-                server.getLogger().log(Level.SEVERE, "Could not pass event " + event.getEventName() + " to " + registration.getPlugin().getDescription().getName(), ex);
             }
         }
         // This is an ugly hack to handle old-style custom events in old plugins without breakage. All in the name of plugin compatibility.
@@ -369,7 +364,6 @@ public final class SimplePluginManager implements PluginManager {
                 }
             }
         }
-        return event;
     }
 
     /**

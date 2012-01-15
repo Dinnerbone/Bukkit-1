@@ -2,14 +2,12 @@ package org.bukkit.plugin;
 
 import java.io.File;
 import java.util.Set;
-
 import org.bukkit.event.Event;
 import org.bukkit.event.Event.Priority;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.permissions.Permissible;
 import org.bukkit.permissions.Permission;
-import org.bukkit.plugin.messaging.PluginMessageListener;
 
 /**
  * Handles all plugin management from the Server
@@ -96,7 +94,7 @@ public interface PluginManager {
      * @param event Event details
      * @return Called event
      */
-    public <T extends Event> T callEvent(T event);
+    public void callEvent(Event event);
 
     /**
      * Registers the given event to the specified listener

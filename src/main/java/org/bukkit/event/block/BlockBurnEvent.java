@@ -11,6 +11,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class BlockBurnEvent extends BlockEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancelled;
 
     public BlockBurnEvent(Block block) {
@@ -25,14 +26,12 @@ public class BlockBurnEvent extends BlockEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
-    
+
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
-    
+
     public static HandlerList getHandlerList() {
         return handlers;
     }

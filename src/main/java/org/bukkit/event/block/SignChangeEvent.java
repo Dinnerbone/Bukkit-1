@@ -12,6 +12,7 @@ import org.bukkit.event.HandlerList;
  */
 @SuppressWarnings("serial")
 public class SignChangeEvent extends BlockEvent implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
     private Player player;
     private String[] lines;
@@ -69,14 +70,12 @@ public class SignChangeEvent extends BlockEvent implements Cancellable {
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
-    
-    private static final HandlerList handlers = new HandlerList();
-    
+
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
-    
+
     public static HandlerList getHandlerList() {
         return handlers;
     }

@@ -2,13 +2,11 @@ package org.bukkit.configuration.file;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.inventory.ItemStack;
-
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public  class YamlConfigurationTest extends FileConfigurationTest {
     @Override
